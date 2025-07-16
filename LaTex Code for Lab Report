@@ -1,0 +1,87 @@
+\documentclass[30pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry} % to  Set the margins of the path
+\usepackage{amssymb, amsmath, amsthm}
+\usepackage{graphicx} % Required for inserting images
+\graphicspath{{images/}}
+\usepackage{float}
+\usepackage{lipsum} % for dummy text
+\usepackage{url}
+\usepackage{gensymb}
+
+\title{\Huge{\textbf{Light Dimmer Using Potentiometer}}}
+\author{\huge\textbf{{Stephen Edem Adzoyi - 4087524 \\ \\ \\ \Large{Department of Computer Engineering, KNUST}}}}
+\date{\Large{16th July 2025}}
+
+\begin{document}
+    
+ \maketitle
+    % \noindent\rule{\textwidth}{0.5pt}
+    % \begin{center}
+    %      \Large\textbf{{Abstract}}
+    % \end{center}
+   
+    % \noindent\rule{\textwidth}{0.5pt}
+    \Large{
+        \begin{abstract}
+             This project demonstrates the implementation of a simple light dimmer circuit using a potentiometer to control the brightness of an LED. The experiment was carried out using an ESP32 development board, jumper wires, potentiometer, a LED, and a laptop for programming. However, this system does not rely on pulse-width modulation. This design utilizes varying resistances to adjust the current flowing through the LED. As the potentiometer is turned, the current changes and thus increases or decreases the brightness of the LED. 
+        
+        \end{abstract}
+    }
+
+    \section*{1. Project Objective}
+   In this project, a potentiometer is used to control the resistance of the circuit. As the resistance of the circuit changes, the current flowing through the LED also changes. As a result, the brightness of the LED is controlled. 
+
+   \section*{2. What is the Potentiometer?}
+   The potentiometer is a three-terminal resistive device that functions as a variable resistor. It consists of a resistive track and a rotating or sliding contact called the wiper that moves along the track. When connected to a circuit the potentiometer might act as a voltage divider or variable resistor depending on how its connected in the circuit. 
+   
+   \section*{3. Project Description}
+   In this project, we are going to control the brightness of the LED manually using the potentiometer. Unlike other circuits that rely on Pulse-Width Modulation (PWM), this circuit relies solely on analog control by adjusting current through resistance. 
+   \subsection*{Component Used:}
+   \begin{itemize}
+       \item Esp32 Development Board
+       \item Breadboard
+       \item Jumper Wires
+       \item $10k\ohm$ Potentiometer
+       \item Light Emitting Diode
+       \item Laptop for programming the circuit
+   \end{itemize}
+
+    \subsection*{Procedure}
+    \begin{enumerate}
+        \item Connected the potentiometer to the power rail (3.3V), ground and the middle terminal to the analog input pin "2" on the potentiometer. 
+        \item Connected the negative terminal of the LED to the negative terminal of the potentiometer and the positive terminal of the LED to the middle terminal of the potentiometer. 
+        \item Uploaded the code using Arduino IDE to read the analog values of the potentiometer.
+        \item Observed how the changing values of the potentiometer resulted in a change in the brightness of the LED.  
+\end{enumerate}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/image.png}
+    \caption{Code Uploaded to GitHub}
+    \label{fig:enter-label}
+\end{figure}
+\noindent Repository link: \url{https://github.com/sadzoyiedem/light_dimmer_arduino}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/WhatsApp Image 2025-07-16 at 12,30,36_dc5d4eee-Picsart-BackgroundChanger.jpg}
+    \caption{Physical Connections}
+    \label{fig:enter-label}
+\end{figure}
+\section*{4. Observation and Results}
+\begin{itemize}
+    \item As the potentiometer was rotated clockwise, the resistance decreased, allowing more current to flow to the LED, making it brighter. 
+    \item Rotating it anticlockwise increased the resistance, thus reducing the current flowing to the LED and hence dimming the LED. 
+    \item The brightness changed smoothly without flickering.  
+\end{itemize}
+
+\subsection*{Challenges}
+\begin{itemize}
+    \item I needed to ensure that the LED current was limited to prevent damage. 
+    \item Initial confusion in pin mapping on the ESP32 board. 
+\end{itemize}
+
+\section*{5. Conclusion}
+This experiment provided hands-on understanding manual current control using a potentiometer. The LED responded accurately to change in resistance. This aided me to successfully achieve the goal of brightness control through manual tuning.   
+\end{document}
